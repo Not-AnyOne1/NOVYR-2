@@ -14,7 +14,23 @@
    storefront can never show "ORDER RECEIVED" for an order nobody got.
 ============================================================ */
 
-const CITIES = ["Casablanca", "Rabat", "Marrakech", "Fès", "Tanger", "Agadir", "Meknès", "Oujda", "Other"];
+// Must stay in sync with the <select id="coCity"> options in index.html —
+// anything not in this list is rejected as an invalid city.
+const CITIES = [
+  "Agadir", "Ahfir", "Aïn Harrouda", "Aït Melloul", "Aït Ourir", "Al Hoceïma", "Asilah",
+  "Azemmour", "Azrou", "Ben Guerir", "Beni Ansar", "Beni Mellal", "Benslimane", "Berkane",
+  "Berrechid", "Bouarfa", "Boujdour", "Bouskoura", "Bouznika", "Casablanca", "Chefchaouen",
+  "Chichaoua", "Dakhla", "Dar Bouazza", "Demnate", "El Aioun Sidi Mellouk", "El Hajeb",
+  "El Jadida", "El Kelaa des Sraghna", "Errachidia", "Essaouira", "Fès", "Figuig", "Fnideq",
+  "Fquih Ben Salah", "Guelmim", "Guercif", "Ifrane", "Imzouren", "Inezgane", "Jerada",
+  "Kénitra", "Khémisset", "Khenifra", "Khouribga", "Ksar El Kébir", "Laâyoune", "Larache",
+  "M'diq", "Marrakech", "Martil", "Mechraa Bel Ksiri", "Meknès", "Midelt", "Missour",
+  "Mohammedia", "Nador", "Ouarzazate", "Ouazzane", "Oued Zem", "Oujda", "Oulad Teïma",
+  "Rabat", "Rissani", "Safi", "Salé", "Sefrou", "Settat", "Sidi Bennour", "Sidi Ifni",
+  "Sidi Kacem", "Sidi Slimane", "Sidi Yahya El Gharb", "Skhirat", "Souk El Arbaa",
+  "Souk Sebt", "Tan-Tan", "Tanger", "Taounate", "Taourirt", "Taroudant", "Taza", "Témara",
+  "Tétouan", "Tiflet", "Tinghir", "Tiznit", "Youssoufia", "Zagora", "Other"
+];
 const SIZES = ["S", "M", "L", "XL"];
 const MAX_ITEMS = 50;
 

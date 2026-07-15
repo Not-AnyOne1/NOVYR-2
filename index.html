@@ -1,0 +1,1399 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- SEO -->
+  <title>NOVYR — Oversized Streetwear Tees | Cash on Delivery Morocco</title>
+  <meta name="description" content="Oversized 240 gsm streetwear tees, high-density screen prints, limited drops. Free delivery across Morocco, cash on delivery, free size exchange.">
+  <link rel="canonical" href="https://novyr.ma/">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="NOVYR — Oversized Streetwear Tees | Cash on Delivery Morocco">
+  <meta property="og:description" content="Oversized 240 gsm streetwear tees, high-density screen prints, limited drops. Free delivery across Morocco, cash on delivery, free size exchange.">
+  <meta property="og:image" content="https://novyr.ma/assets/hero.jpg">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://novyr.ma/">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Space+Grotesk:wght@400;500;600&family=Inter:wght@400;500&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body data-theme="dark">
+
+  <!-- ============================================================
+       LOADER (hard refresh only)
+  ============================================================ -->
+  <div class="loader" id="loader" aria-hidden="true">
+    <div class="loader__logo-wrap">
+      <span class="loader__logo">NOVYR</span>
+      <span class="loader__wipe"></span>
+    </div>
+    <span class="loader__counter" id="loaderCounter">000</span>
+  </div>
+
+  <!-- ============================================================
+       ENTRY SCREEN (once per session)
+  ============================================================ -->
+  <div class="entry" id="entry" aria-hidden="true">
+    <div class="entry__half entry__half--top"></div>
+    <div class="entry__half entry__half--bottom"></div>
+    <div class="entry__content">
+      <span class="entry__logo">NOVYR</span>
+      <span class="entry__line"></span>
+      <span class="entry__cta" id="entryCta">CLICK TO ENTER</span>
+    </div>
+  </div>
+
+  <!-- ============================================================
+       PAGE TRANSITION WIPE (anchor navigation)
+  ============================================================ -->
+  <div class="wipe" id="wipe" aria-hidden="true"></div>
+
+  <!-- Scroll progress bar -->
+  <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
+
+  <!-- Custom cursor (desktop) -->
+  <div class="cursor" aria-hidden="true">
+    <div class="cursor__dot" id="cursorDot"></div>
+    <div class="cursor__ring" id="cursorRing"><span class="cursor__label" id="cursorLabel"></span></div>
+  </div>
+
+  <!-- ============================================================
+       HEADER / NAVBAR
+  ============================================================ -->
+  <header class="nav" id="nav" data-nav-theme="dark">
+    <a class="nav__logo" href="#hero" data-wipe>NOVYR</a>
+
+    <nav class="nav__links" aria-label="Main navigation">
+      <a href="#hero" data-wipe class="nav__link">Home</a>
+      <a href="#packs" data-wipe class="nav__link">Products</a>
+      <a href="#lookbook" data-wipe class="nav__link">Lookbook</a>
+      <a href="#reviews" data-wipe class="nav__link">Reviews</a>
+      <a href="#faq" data-wipe class="nav__link">FAQ</a>
+    </nav>
+
+    <div class="nav__right">
+      <button class="nav__cart" id="cartToggle" aria-label="Open cart">
+        <!-- custom line cart icon -->
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+          <path d="M4 7h16l-1.5 12h-13L4 7z"/>
+          <path d="M8.5 10V5.5a3.5 3.5 0 0 1 7 0V10"/>
+        </svg>
+        <span class="nav__cart-count" id="cartCount">0</span>
+      </button>
+      <button class="nav__burger" id="burger" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Mobile full-screen menu -->
+  <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+    <span class="mobile-menu__watermark" aria-hidden="true">NOVYR</span>
+    <nav class="mobile-menu__links" aria-label="Mobile navigation">
+      <a href="#hero" data-wipe class="mobile-menu__link">Home</a>
+      <a href="#packs" data-wipe class="mobile-menu__link">Products</a>
+      <a href="#lookbook" data-wipe class="mobile-menu__link">Lookbook</a>
+      <a href="#reviews" data-wipe class="mobile-menu__link">Reviews</a>
+      <a href="#faq" data-wipe class="mobile-menu__link">FAQ</a>
+    </nav>
+  </div>
+
+  <main id="main">
+
+    <!-- ============================================================
+         SECTION 1 — ANNOUNCEMENT BAR
+    ============================================================ -->
+    <div class="announce" data-bg="dark" aria-label="Store announcements">
+      <div class="announce__track marquee-track" data-marquee data-direction="-1" data-base-speed="1">
+        <!-- content duplicated by JS for seamless loop -->
+        <span class="announce__item">FREE DELIVERY ACROSS MOROCCO&ensp;✦&ensp;CASH ON DELIVERY&ensp;✦&ensp;FREE SIZE EXCHANGE&ensp;✦&ensp;LIMITED DROPS&ensp;✦&ensp;</span>
+      </div>
+    </div>
+
+    <!-- ============================================================
+         SECTION 2 — HERO
+    ============================================================ -->
+    <section class="hero" id="hero" data-bg="dark" aria-label="Hero">
+      <div class="hero__text">
+        <p class="hero__eyebrow" id="heroEyebrow">DROP 01 — LIMITED TO 300 PIECES</p>
+        <h1 class="hero__title" id="heroTitle">WEAR THE STREETS. NOT THE TREND.</h1>
+        <span class="hero__rule" id="heroRule"></span>
+        <p class="hero__sub" id="heroSub">Oversized 240 gsm tees — high-density screen print, built for the streets.</p>
+        <div class="hero__ctas" id="heroCtas">
+          <a href="#packs" data-wipe class="btn btn--primary" data-magnetic>
+            <span>SHOP THE DROP — FROM 199 MAD</span>
+            <span class="btn__arrow" aria-hidden="true">→</span>
+          </a>
+          <a href="#lookbook" data-wipe class="btn btn--ghost" data-magnetic>VIEW LOOKBOOK</a>
+        </div>
+        <span class="hero__scroll" id="heroScroll" aria-hidden="true">↓ SCROLL</span>
+      </div>
+      <div class="hero__media" data-cursor="view">
+        <div class="hero__img-mask" id="heroImgMask">
+          <img class="hero__img" id="heroImg"
+               src="assets/hero.jpg"
+               style="object-position: 50% 20%"
+               alt="NOVYR Drop 01 — oversized black tee, painted portrait front print and BORN THIS WAY back print" fetchpriority="high">
+        </div>
+      </div>
+    </section>
+
+    <!-- MARQUEE STRIP 1 -->
+    <div class="strip" data-bg="dark" aria-hidden="true">
+      <div class="strip__track marquee-track" data-marquee data-direction="-1" data-base-speed="1.6" data-skew>
+        <span class="strip__item strip__item--light">NOVYR ✦ WEAR THE STREETS ✦ LIMITED DROPS ✦ NEVER RESTOCKED ✦&ensp;</span>
+      </div>
+    </div>
+
+    <!-- MARQUEE STRIP 2 (white, scrolls right) -->
+    <div class="strip strip--light" data-bg="light" aria-hidden="true">
+      <div class="strip__track marquee-track" data-marquee data-direction="1" data-base-speed="1.6" data-skew>
+        <span class="strip__item strip__item--dark">SHOP THE COLLECTION ✦ LIMITED STOCK ✦ NEVER RESTOCKED ✦ NOVYR ✦&ensp;</span>
+      </div>
+    </div>
+
+    <!-- ============================================================
+         SECTION 5 — PACKS
+    ============================================================ -->
+    <section class="packs" id="packs" data-bg="light" aria-label="Products">
+      <h2 class="packs__title outlined-dark" data-chars>THE COLLECTION</h2>
+      <p class="packs__sub" data-reveal>Drop 01 — every piece is limited. Once it's gone, it's gone.</p>
+
+      <div class="packs__grid">
+
+        <!-- BORN THIS WAY -->
+        <article class="pack-card" data-pack-reveal data-name="BORN THIS WAY" data-price="249">
+          <span class="pack-card__topline" aria-hidden="true"></span>
+          <span class="pack-card__badge pack-card__badge--discount">-29%</span>
+          <div class="pack-card__media" data-cursor="view">
+            <img class="pack-card__img" src="assets/prod-born.jpg" alt="BORN THIS WAY — black oversized tee, painted portrait front, brushed script back print" loading="lazy">
+          </div>
+          <div class="pack-card__body">
+            <h3 class="pack-card__name">BORN THIS WAY</h3>
+            <p class="pack-card__desc">Oversized · 240 gsm combed cotton</p>
+            <p class="pack-card__price"><span class="pack-card__price-now">249 MAD</span> <s class="pack-card__price-old">349 MAD</s></p>
+
+            <div class="pack-card__sizes" role="group" aria-label="Select size">
+              <button class="size-chip" data-size="S">S</button>
+              <button class="size-chip is-selected" data-size="M">M</button>
+              <button class="size-chip" data-size="L">L</button>
+              <button class="size-chip" data-size="XL">XL</button>
+            </div>
+            <div class="pack-card__colors" role="group" aria-label="Select color">
+              <button class="swatch is-selected" data-color="Black" style="--swatch:#111" aria-label="Black"></button>
+              <button class="swatch" data-color="Off-White" style="--swatch:#F5F3EE" aria-label="Off-White"></button>
+              <button class="swatch" data-color="Washed Grey" style="--swatch:#8A8A8A" aria-label="Washed Grey"></button>
+            </div>
+
+            <p class="pack-card__stock">Only 4 left.</p>
+            <button class="btn btn--cart" data-add-to-cart data-magnetic>ADD TO CART</button>
+            <button class="pack-card__size-guide" data-size-guide>Size Guide →</button>
+          </div>
+        </article>
+
+        <!-- HARD WAY -->
+        <article class="pack-card" data-pack-reveal data-name="HARD WAY" data-price="199">
+          <span class="pack-card__topline" aria-hidden="true"></span>
+          <span class="pack-card__badge pack-card__badge--discount">-33%</span>
+          <div class="pack-card__media" data-cursor="view">
+            <img class="pack-card__img" src="assets/prod-hardway.jpg" alt="HARD WAY — white oversized tee, crosshair front, handwritten back print" loading="lazy">
+          </div>
+          <div class="pack-card__body">
+            <h3 class="pack-card__name">HARD WAY</h3>
+            <p class="pack-card__desc">Oversized · 240 gsm combed cotton</p>
+            <p class="pack-card__price"><span class="pack-card__price-now">199 MAD</span> <s class="pack-card__price-old">299 MAD</s></p>
+
+            <div class="pack-card__sizes" role="group" aria-label="Select size">
+              <button class="size-chip" data-size="S">S</button>
+              <button class="size-chip is-selected" data-size="M">M</button>
+              <button class="size-chip" data-size="L">L</button>
+              <button class="size-chip" data-size="XL">XL</button>
+            </div>
+            <div class="pack-card__colors" role="group" aria-label="Select color">
+              <button class="swatch" data-color="Black" style="--swatch:#111" aria-label="Black"></button>
+              <button class="swatch is-selected" data-color="Off-White" style="--swatch:#F5F3EE" aria-label="Off-White"></button>
+              <button class="swatch" data-color="Washed Grey" style="--swatch:#8A8A8A" aria-label="Washed Grey"></button>
+            </div>
+
+            <p class="pack-card__stock">Only 9 left.</p>
+            <button class="btn btn--cart" data-add-to-cart data-magnetic>ADD TO CART</button>
+            <button class="pack-card__size-guide" data-size-guide>Size Guide →</button>
+          </div>
+        </article>
+
+        <!-- EUPHORIA -->
+        <article class="pack-card" data-pack-reveal data-name="EUPHORIA" data-price="249">
+          <span class="pack-card__topline" aria-hidden="true"></span>
+          <span class="pack-card__badge pack-card__badge--discount">-29%</span>
+          <div class="pack-card__media" data-cursor="view">
+            <img class="pack-card__img" src="assets/prod-euphoria.jpg" alt="EUPHORIA — black oversized tee, purple flame figure back print" loading="lazy">
+          </div>
+          <div class="pack-card__body">
+            <h3 class="pack-card__name">EUPHORIA</h3>
+            <p class="pack-card__desc">Oversized · 240 gsm combed cotton</p>
+            <p class="pack-card__price"><span class="pack-card__price-now">249 MAD</span> <s class="pack-card__price-old">349 MAD</s></p>
+
+            <div class="pack-card__sizes" role="group" aria-label="Select size">
+              <button class="size-chip" data-size="S">S</button>
+              <button class="size-chip is-selected" data-size="M">M</button>
+              <button class="size-chip" data-size="L">L</button>
+              <button class="size-chip" data-size="XL">XL</button>
+            </div>
+            <div class="pack-card__colors" role="group" aria-label="Select color">
+              <button class="swatch is-selected" data-color="Black" style="--swatch:#111" aria-label="Black"></button>
+              <button class="swatch" data-color="Off-White" style="--swatch:#F5F3EE" aria-label="Off-White"></button>
+              <button class="swatch" data-color="Washed Grey" style="--swatch:#8A8A8A" aria-label="Washed Grey"></button>
+            </div>
+
+            <p class="pack-card__stock">Only 6 left.</p>
+            <button class="btn btn--cart" data-add-to-cart data-magnetic>ADD TO CART</button>
+            <button class="pack-card__size-guide" data-size-guide>Size Guide →</button>
+          </div>
+        </article>
+
+        <!-- FEAR OF AVERAGE -->
+        <article class="pack-card" data-pack-reveal data-name="FEAR OF AVERAGE" data-price="199">
+          <span class="pack-card__topline" aria-hidden="true"></span>
+          <span class="pack-card__badge pack-card__badge--lime">MOST POPULAR</span>
+          <div class="pack-card__media" data-cursor="view">
+            <img class="pack-card__img" src="assets/prod-fear.jpg" alt="FEAR OF AVERAGE — white oversized tee, black hands front, typewriter back print" loading="lazy">
+          </div>
+          <div class="pack-card__body">
+            <h3 class="pack-card__name">FEAR OF AVERAGE</h3>
+            <p class="pack-card__desc">Oversized · 240 gsm combed cotton</p>
+            <p class="pack-card__price"><span class="pack-card__price-now">199 MAD</span> <s class="pack-card__price-old">299 MAD</s></p>
+
+            <div class="pack-card__sizes" role="group" aria-label="Select size">
+              <button class="size-chip" data-size="S">S</button>
+              <button class="size-chip is-selected" data-size="M">M</button>
+              <button class="size-chip" data-size="L">L</button>
+              <button class="size-chip" data-size="XL">XL</button>
+            </div>
+            <div class="pack-card__colors" role="group" aria-label="Select color">
+              <button class="swatch" data-color="Black" style="--swatch:#111" aria-label="Black"></button>
+              <button class="swatch is-selected" data-color="Off-White" style="--swatch:#F5F3EE" aria-label="Off-White"></button>
+              <button class="swatch" data-color="Washed Grey" style="--swatch:#8A8A8A" aria-label="Washed Grey"></button>
+            </div>
+
+            <p class="pack-card__stock">Only 3 left.</p>
+            <button class="btn btn--cart" data-add-to-cart data-magnetic>ADD TO CART</button>
+            <button class="pack-card__size-guide" data-size-guide>Size Guide →</button>
+          </div>
+        </article>
+
+        <!-- TOLD CHATGPT -->
+        <article class="pack-card" data-pack-reveal data-name="TOLD CHATGPT" data-price="199">
+          <span class="pack-card__topline" aria-hidden="true"></span>
+          <span class="pack-card__badge pack-card__badge--discount">-33%</span>
+          <div class="pack-card__media" data-cursor="view">
+            <img class="pack-card__img" src="assets/prod-chatgpt.jpg" alt="TOLD CHATGPT — black oversized tee, red handwritten back print" loading="lazy">
+          </div>
+          <div class="pack-card__body">
+            <h3 class="pack-card__name">TOLD CHATGPT</h3>
+            <p class="pack-card__desc">Oversized · 240 gsm combed cotton</p>
+            <p class="pack-card__price"><span class="pack-card__price-now">199 MAD</span> <s class="pack-card__price-old">299 MAD</s></p>
+
+            <div class="pack-card__sizes" role="group" aria-label="Select size">
+              <button class="size-chip" data-size="S">S</button>
+              <button class="size-chip is-selected" data-size="M">M</button>
+              <button class="size-chip" data-size="L">L</button>
+              <button class="size-chip" data-size="XL">XL</button>
+            </div>
+            <div class="pack-card__colors" role="group" aria-label="Select color">
+              <button class="swatch is-selected" data-color="Black" style="--swatch:#111" aria-label="Black"></button>
+              <button class="swatch" data-color="Off-White" style="--swatch:#F5F3EE" aria-label="Off-White"></button>
+              <button class="swatch" data-color="Washed Grey" style="--swatch:#8A8A8A" aria-label="Washed Grey"></button>
+            </div>
+
+            <p class="pack-card__stock">Only 8 left.</p>
+            <button class="btn btn--cart" data-add-to-cart data-magnetic>ADD TO CART</button>
+            <button class="pack-card__size-guide" data-size-guide>Size Guide →</button>
+          </div>
+        </article>
+
+        <!-- DARK VISION -->
+        <article class="pack-card" data-pack-reveal data-name="DARK VISION" data-price="199">
+          <span class="pack-card__topline" aria-hidden="true"></span>
+          <span class="pack-card__badge pack-card__badge--discount">-33%</span>
+          <div class="pack-card__media" data-cursor="view">
+            <img class="pack-card__img" src="assets/prod-darkvision.jpg" alt="DARK VISION — white oversized tee, DARK VISION serif back print" loading="lazy">
+          </div>
+          <div class="pack-card__body">
+            <h3 class="pack-card__name">DARK VISION</h3>
+            <p class="pack-card__desc">Oversized · 240 gsm combed cotton</p>
+            <p class="pack-card__price"><span class="pack-card__price-now">199 MAD</span> <s class="pack-card__price-old">299 MAD</s></p>
+
+            <div class="pack-card__sizes" role="group" aria-label="Select size">
+              <button class="size-chip" data-size="S">S</button>
+              <button class="size-chip is-selected" data-size="M">M</button>
+              <button class="size-chip" data-size="L">L</button>
+              <button class="size-chip" data-size="XL">XL</button>
+            </div>
+            <div class="pack-card__colors" role="group" aria-label="Select color">
+              <button class="swatch" data-color="Black" style="--swatch:#111" aria-label="Black"></button>
+              <button class="swatch is-selected" data-color="Off-White" style="--swatch:#F5F3EE" aria-label="Off-White"></button>
+              <button class="swatch" data-color="Washed Grey" style="--swatch:#8A8A8A" aria-label="Washed Grey"></button>
+            </div>
+
+            <p class="pack-card__stock">Only 11 left.</p>
+            <button class="btn btn--cart" data-add-to-cart data-magnetic>ADD TO CART</button>
+            <button class="pack-card__size-guide" data-size-guide>Size Guide →</button>
+          </div>
+        </article>
+
+        <!-- LAVISH -->
+        <article class="pack-card" data-pack-reveal data-name="LAVISH" data-price="249">
+          <span class="pack-card__topline" aria-hidden="true"></span>
+          <span class="pack-card__badge pack-card__badge--discount">-29%</span>
+          <div class="pack-card__media" data-cursor="view">
+            <img class="pack-card__img" src="assets/prod-lavish.jpg" alt="LAVISH — black oversized tee, blurred blue figure back print" loading="lazy">
+          </div>
+          <div class="pack-card__body">
+            <h3 class="pack-card__name">LAVISH</h3>
+            <p class="pack-card__desc">Oversized · 240 gsm combed cotton</p>
+            <p class="pack-card__price"><span class="pack-card__price-now">249 MAD</span> <s class="pack-card__price-old">349 MAD</s></p>
+
+            <div class="pack-card__sizes" role="group" aria-label="Select size">
+              <button class="size-chip" data-size="S">S</button>
+              <button class="size-chip is-selected" data-size="M">M</button>
+              <button class="size-chip" data-size="L">L</button>
+              <button class="size-chip" data-size="XL">XL</button>
+            </div>
+            <div class="pack-card__colors" role="group" aria-label="Select color">
+              <button class="swatch is-selected" data-color="Black" style="--swatch:#111" aria-label="Black"></button>
+              <button class="swatch" data-color="Off-White" style="--swatch:#F5F3EE" aria-label="Off-White"></button>
+              <button class="swatch" data-color="Washed Grey" style="--swatch:#8A8A8A" aria-label="Washed Grey"></button>
+            </div>
+
+            <p class="pack-card__stock">Only 5 left.</p>
+            <button class="btn btn--cart" data-add-to-cart data-magnetic>ADD TO CART</button>
+            <button class="pack-card__size-guide" data-size-guide>Size Guide →</button>
+          </div>
+        </article>
+
+        <!-- I WAS BLIND -->
+        <article class="pack-card" data-pack-reveal data-name="I WAS BLIND" data-price="199">
+          <span class="pack-card__topline" aria-hidden="true"></span>
+          <span class="pack-card__badge pack-card__badge--discount">-33%</span>
+          <div class="pack-card__media" data-cursor="view">
+            <img class="pack-card__img" src="assets/prod-blind.jpg" alt="I WAS BLIND — white oversized tee, ink eye back print" loading="lazy">
+          </div>
+          <div class="pack-card__body">
+            <h3 class="pack-card__name">I WAS BLIND</h3>
+            <p class="pack-card__desc">Oversized · 240 gsm combed cotton</p>
+            <p class="pack-card__price"><span class="pack-card__price-now">199 MAD</span> <s class="pack-card__price-old">299 MAD</s></p>
+
+            <div class="pack-card__sizes" role="group" aria-label="Select size">
+              <button class="size-chip" data-size="S">S</button>
+              <button class="size-chip is-selected" data-size="M">M</button>
+              <button class="size-chip" data-size="L">L</button>
+              <button class="size-chip" data-size="XL">XL</button>
+            </div>
+            <div class="pack-card__colors" role="group" aria-label="Select color">
+              <button class="swatch" data-color="Black" style="--swatch:#111" aria-label="Black"></button>
+              <button class="swatch is-selected" data-color="Off-White" style="--swatch:#F5F3EE" aria-label="Off-White"></button>
+              <button class="swatch" data-color="Washed Grey" style="--swatch:#8A8A8A" aria-label="Washed Grey"></button>
+            </div>
+
+            <p class="pack-card__stock">Only 7 left.</p>
+            <button class="btn btn--cart" data-add-to-cart data-magnetic>ADD TO CART</button>
+            <button class="pack-card__size-guide" data-size-guide>Size Guide →</button>
+          </div>
+        </article>
+
+        <!-- PRETTY GIRLS -->
+        <article class="pack-card" data-pack-reveal data-name="PRETTY GIRLS" data-price="199">
+          <span class="pack-card__topline" aria-hidden="true"></span>
+          <span class="pack-card__badge pack-card__badge--discount">-33%</span>
+          <div class="pack-card__media" data-cursor="view">
+            <img class="pack-card__img" src="assets/prod-pretty.jpg" alt="PRETTY GIRLS — black oversized tee, glossy lips front, PRETTY GIRLS LOVE BRANDS back print" loading="lazy">
+          </div>
+          <div class="pack-card__body">
+            <h3 class="pack-card__name">PRETTY GIRLS</h3>
+            <p class="pack-card__desc">Oversized · 240 gsm combed cotton</p>
+            <p class="pack-card__price"><span class="pack-card__price-now">199 MAD</span> <s class="pack-card__price-old">299 MAD</s></p>
+
+            <div class="pack-card__sizes" role="group" aria-label="Select size">
+              <button class="size-chip" data-size="S">S</button>
+              <button class="size-chip is-selected" data-size="M">M</button>
+              <button class="size-chip" data-size="L">L</button>
+              <button class="size-chip" data-size="XL">XL</button>
+            </div>
+            <div class="pack-card__colors" role="group" aria-label="Select color">
+              <button class="swatch is-selected" data-color="Black" style="--swatch:#111" aria-label="Black"></button>
+              <button class="swatch" data-color="Off-White" style="--swatch:#F5F3EE" aria-label="Off-White"></button>
+              <button class="swatch" data-color="Washed Grey" style="--swatch:#8A8A8A" aria-label="Washed Grey"></button>
+            </div>
+
+            <p class="pack-card__stock">Only 9 left.</p>
+            <button class="btn btn--cart" data-add-to-cart data-magnetic>ADD TO CART</button>
+            <button class="pack-card__size-guide" data-size-guide>Size Guide →</button>
+          </div>
+        </article>
+
+        <!-- TALK TOO MUCH -->
+        <article class="pack-card" data-pack-reveal data-name="TALK TOO MUCH" data-price="199">
+          <span class="pack-card__topline" aria-hidden="true"></span>
+          <span class="pack-card__badge pack-card__badge--discount">-33%</span>
+          <div class="pack-card__media" data-cursor="view">
+            <img class="pack-card__img" src="assets/prod-talk.jpg" alt="TALK TOO MUCH — white oversized tee, red graphic back print" loading="lazy">
+          </div>
+          <div class="pack-card__body">
+            <h3 class="pack-card__name">TALK TOO MUCH</h3>
+            <p class="pack-card__desc">Oversized · 240 gsm combed cotton</p>
+            <p class="pack-card__price"><span class="pack-card__price-now">199 MAD</span> <s class="pack-card__price-old">299 MAD</s></p>
+
+            <div class="pack-card__sizes" role="group" aria-label="Select size">
+              <button class="size-chip" data-size="S">S</button>
+              <button class="size-chip is-selected" data-size="M">M</button>
+              <button class="size-chip" data-size="L">L</button>
+              <button class="size-chip" data-size="XL">XL</button>
+            </div>
+            <div class="pack-card__colors" role="group" aria-label="Select color">
+              <button class="swatch" data-color="Black" style="--swatch:#111" aria-label="Black"></button>
+              <button class="swatch is-selected" data-color="Off-White" style="--swatch:#F5F3EE" aria-label="Off-White"></button>
+              <button class="swatch" data-color="Washed Grey" style="--swatch:#8A8A8A" aria-label="Washed Grey"></button>
+            </div>
+
+            <p class="pack-card__stock">Only 12 left.</p>
+            <button class="btn btn--cart" data-add-to-cart data-magnetic>ADD TO CART</button>
+            <button class="pack-card__size-guide" data-size-guide>Size Guide →</button>
+          </div>
+        </article>
+
+        <!-- STREET WAYS -->
+        <article class="pack-card" data-pack-reveal data-name="STREET WAYS" data-price="199">
+          <span class="pack-card__topline" aria-hidden="true"></span>
+          <span class="pack-card__badge pack-card__badge--discount">-33%</span>
+          <div class="pack-card__media" data-cursor="view">
+            <img class="pack-card__img" src="assets/prod-street.jpg" alt="STREET WAYS — white oversized tee, STREET WAYS front graphic print" loading="lazy">
+          </div>
+          <div class="pack-card__body">
+            <h3 class="pack-card__name">STREET WAYS</h3>
+            <p class="pack-card__desc">Oversized · 240 gsm combed cotton</p>
+            <p class="pack-card__price"><span class="pack-card__price-now">199 MAD</span> <s class="pack-card__price-old">299 MAD</s></p>
+
+            <div class="pack-card__sizes" role="group" aria-label="Select size">
+              <button class="size-chip" data-size="S">S</button>
+              <button class="size-chip is-selected" data-size="M">M</button>
+              <button class="size-chip" data-size="L">L</button>
+              <button class="size-chip" data-size="XL">XL</button>
+            </div>
+            <div class="pack-card__colors" role="group" aria-label="Select color">
+              <button class="swatch" data-color="Black" style="--swatch:#111" aria-label="Black"></button>
+              <button class="swatch is-selected" data-color="Off-White" style="--swatch:#F5F3EE" aria-label="Off-White"></button>
+              <button class="swatch" data-color="Washed Grey" style="--swatch:#8A8A8A" aria-label="Washed Grey"></button>
+            </div>
+
+            <p class="pack-card__stock">Only 6 left.</p>
+            <button class="btn btn--cart" data-add-to-cart data-magnetic>ADD TO CART</button>
+            <button class="pack-card__size-guide" data-size-guide>Size Guide →</button>
+          </div>
+        </article>
+
+        <!-- THE WRITHERS -->
+        <article class="pack-card" data-pack-reveal data-name="THE WRITHERS" data-price="199">
+          <span class="pack-card__topline" aria-hidden="true"></span>
+          <span class="pack-card__badge pack-card__badge--discount">LOW STOCK</span>
+          <div class="pack-card__media" data-cursor="view">
+            <img class="pack-card__img" src="assets/prod-writhers.jpg" alt="THE WRITHERS — white oversized tee, colorful x-ray skeleton back print" loading="lazy">
+          </div>
+          <div class="pack-card__body">
+            <h3 class="pack-card__name">THE WRITHERS</h3>
+            <p class="pack-card__desc">Oversized · 240 gsm combed cotton</p>
+            <p class="pack-card__price"><span class="pack-card__price-now">199 MAD</span> <s class="pack-card__price-old">299 MAD</s></p>
+
+            <div class="pack-card__sizes" role="group" aria-label="Select size">
+              <button class="size-chip" data-size="S">S</button>
+              <button class="size-chip is-selected" data-size="M">M</button>
+              <button class="size-chip" data-size="L">L</button>
+              <button class="size-chip" data-size="XL">XL</button>
+            </div>
+            <div class="pack-card__colors" role="group" aria-label="Select color">
+              <button class="swatch" data-color="Black" style="--swatch:#111" aria-label="Black"></button>
+              <button class="swatch is-selected" data-color="Off-White" style="--swatch:#F5F3EE" aria-label="Off-White"></button>
+              <button class="swatch" data-color="Washed Grey" style="--swatch:#8A8A8A" aria-label="Washed Grey"></button>
+            </div>
+
+            <p class="pack-card__stock">Only 2 left.</p>
+            <button class="btn btn--cart" data-add-to-cart data-magnetic>ADD TO CART</button>
+            <button class="pack-card__size-guide" data-size-guide>Size Guide →</button>
+          </div>
+        </article>
+
+        <!-- CHANGE IT -->
+        <article class="pack-card" data-pack-reveal data-name="CHANGE IT" data-price="199">
+          <span class="pack-card__topline" aria-hidden="true"></span>
+          <span class="pack-card__badge pack-card__badge--discount">-33%</span>
+          <div class="pack-card__media" data-cursor="view">
+            <img class="pack-card__img" src="assets/prod-change.jpg" alt="CHANGE IT — white oversized tee, script back print" loading="lazy">
+          </div>
+          <div class="pack-card__body">
+            <h3 class="pack-card__name">CHANGE IT</h3>
+            <p class="pack-card__desc">Oversized · 240 gsm combed cotton</p>
+            <p class="pack-card__price"><span class="pack-card__price-now">199 MAD</span> <s class="pack-card__price-old">299 MAD</s></p>
+
+            <div class="pack-card__sizes" role="group" aria-label="Select size">
+              <button class="size-chip" data-size="S">S</button>
+              <button class="size-chip is-selected" data-size="M">M</button>
+              <button class="size-chip" data-size="L">L</button>
+              <button class="size-chip" data-size="XL">XL</button>
+            </div>
+            <div class="pack-card__colors" role="group" aria-label="Select color">
+              <button class="swatch" data-color="Black" style="--swatch:#111" aria-label="Black"></button>
+              <button class="swatch is-selected" data-color="Off-White" style="--swatch:#F5F3EE" aria-label="Off-White"></button>
+              <button class="swatch" data-color="Washed Grey" style="--swatch:#8A8A8A" aria-label="Washed Grey"></button>
+            </div>
+
+            <p class="pack-card__stock">Only 8 left.</p>
+            <button class="btn btn--cart" data-add-to-cart data-magnetic>ADD TO CART</button>
+            <button class="pack-card__size-guide" data-size-guide>Size Guide →</button>
+          </div>
+        </article>
+
+        <!-- THEY NOT LIKE US -->
+        <article class="pack-card" data-pack-reveal data-name="THEY NOT LIKE US" data-price="249">
+          <span class="pack-card__topline" aria-hidden="true"></span>
+          <span class="pack-card__badge pack-card__badge--discount">-29%</span>
+          <div class="pack-card__media" data-cursor="view">
+            <img class="pack-card__img" src="assets/prod-notlikeus.jpg" alt="THEY NOT LIKE US — washed black oversized tee, bold stacked back print" loading="lazy">
+          </div>
+          <div class="pack-card__body">
+            <h3 class="pack-card__name">THEY NOT LIKE US</h3>
+            <p class="pack-card__desc">Oversized · 240 gsm combed cotton</p>
+            <p class="pack-card__price"><span class="pack-card__price-now">249 MAD</span> <s class="pack-card__price-old">349 MAD</s></p>
+
+            <div class="pack-card__sizes" role="group" aria-label="Select size">
+              <button class="size-chip" data-size="S">S</button>
+              <button class="size-chip is-selected" data-size="M">M</button>
+              <button class="size-chip" data-size="L">L</button>
+              <button class="size-chip" data-size="XL">XL</button>
+            </div>
+            <div class="pack-card__colors" role="group" aria-label="Select color">
+              <button class="swatch is-selected" data-color="Black" style="--swatch:#111" aria-label="Black"></button>
+              <button class="swatch" data-color="Off-White" style="--swatch:#F5F3EE" aria-label="Off-White"></button>
+              <button class="swatch" data-color="Washed Grey" style="--swatch:#8A8A8A" aria-label="Washed Grey"></button>
+            </div>
+
+            <p class="pack-card__stock">Only 5 left.</p>
+            <button class="btn btn--cart" data-add-to-cart data-magnetic>ADD TO CART</button>
+            <button class="pack-card__size-guide" data-size-guide>Size Guide →</button>
+          </div>
+        </article>
+
+        <!-- SO WRONG -->
+        <article class="pack-card" data-pack-reveal data-name="SO WRONG" data-price="199">
+          <span class="pack-card__topline" aria-hidden="true"></span>
+          <span class="pack-card__badge pack-card__badge--discount">-33%</span>
+          <div class="pack-card__media" data-cursor="view">
+            <img class="pack-card__img" src="assets/prod-sowrong.jpg" alt="SO WRONG — black oversized tee, red halo figure front print" loading="lazy">
+          </div>
+          <div class="pack-card__body">
+            <h3 class="pack-card__name">SO WRONG</h3>
+            <p class="pack-card__desc">Oversized · 240 gsm combed cotton</p>
+            <p class="pack-card__price"><span class="pack-card__price-now">199 MAD</span> <s class="pack-card__price-old">299 MAD</s></p>
+
+            <div class="pack-card__sizes" role="group" aria-label="Select size">
+              <button class="size-chip" data-size="S">S</button>
+              <button class="size-chip is-selected" data-size="M">M</button>
+              <button class="size-chip" data-size="L">L</button>
+              <button class="size-chip" data-size="XL">XL</button>
+            </div>
+            <div class="pack-card__colors" role="group" aria-label="Select color">
+              <button class="swatch is-selected" data-color="Black" style="--swatch:#111" aria-label="Black"></button>
+              <button class="swatch" data-color="Off-White" style="--swatch:#F5F3EE" aria-label="Off-White"></button>
+              <button class="swatch" data-color="Washed Grey" style="--swatch:#8A8A8A" aria-label="Washed Grey"></button>
+            </div>
+
+            <p class="pack-card__stock">Only 7 left.</p>
+            <button class="btn btn--cart" data-add-to-cart data-magnetic>ADD TO CART</button>
+            <button class="pack-card__size-guide" data-size-guide>Size Guide →</button>
+          </div>
+        </article>
+
+        <!-- FEIN -->
+        <article class="pack-card" data-pack-reveal data-name="FEIN" data-price="249">
+          <span class="pack-card__topline" aria-hidden="true"></span>
+          <span class="pack-card__badge pack-card__badge--discount">-29%</span>
+          <div class="pack-card__media" data-cursor="view">
+            <img class="pack-card__img" src="assets/prod-fein.jpg" alt="FEIN — black oversized tee, script front print, poster back print" loading="lazy">
+          </div>
+          <div class="pack-card__body">
+            <h3 class="pack-card__name">FEIN</h3>
+            <p class="pack-card__desc">Oversized · 240 gsm combed cotton</p>
+            <p class="pack-card__price"><span class="pack-card__price-now">249 MAD</span> <s class="pack-card__price-old">349 MAD</s></p>
+
+            <div class="pack-card__sizes" role="group" aria-label="Select size">
+              <button class="size-chip" data-size="S">S</button>
+              <button class="size-chip is-selected" data-size="M">M</button>
+              <button class="size-chip" data-size="L">L</button>
+              <button class="size-chip" data-size="XL">XL</button>
+            </div>
+            <div class="pack-card__colors" role="group" aria-label="Select color">
+              <button class="swatch is-selected" data-color="Black" style="--swatch:#111" aria-label="Black"></button>
+              <button class="swatch" data-color="Off-White" style="--swatch:#F5F3EE" aria-label="Off-White"></button>
+              <button class="swatch" data-color="Washed Grey" style="--swatch:#8A8A8A" aria-label="Washed Grey"></button>
+            </div>
+
+            <p class="pack-card__stock">Only 4 left.</p>
+            <button class="btn btn--cart" data-add-to-cart data-magnetic>ADD TO CART</button>
+            <button class="pack-card__size-guide" data-size-guide>Size Guide →</button>
+          </div>
+        </article>
+
+        <!-- SKY AREN -->
+        <article class="pack-card" data-pack-reveal data-name="SKY AREN" data-price="249">
+          <span class="pack-card__topline" aria-hidden="true"></span>
+          <span class="pack-card__badge pack-card__badge--discount">-29%</span>
+          <div class="pack-card__media" data-cursor="view">
+            <img class="pack-card__img" src="assets/prod-skyaren.jpg" alt="SKY AREN — black oversized tee, red graffiti back print" loading="lazy">
+          </div>
+          <div class="pack-card__body">
+            <h3 class="pack-card__name">SKY AREN</h3>
+            <p class="pack-card__desc">Oversized · 240 gsm combed cotton</p>
+            <p class="pack-card__price"><span class="pack-card__price-now">249 MAD</span> <s class="pack-card__price-old">349 MAD</s></p>
+
+            <div class="pack-card__sizes" role="group" aria-label="Select size">
+              <button class="size-chip" data-size="S">S</button>
+              <button class="size-chip is-selected" data-size="M">M</button>
+              <button class="size-chip" data-size="L">L</button>
+              <button class="size-chip" data-size="XL">XL</button>
+            </div>
+            <div class="pack-card__colors" role="group" aria-label="Select color">
+              <button class="swatch is-selected" data-color="Black" style="--swatch:#111" aria-label="Black"></button>
+              <button class="swatch" data-color="Off-White" style="--swatch:#F5F3EE" aria-label="Off-White"></button>
+              <button class="swatch" data-color="Washed Grey" style="--swatch:#8A8A8A" aria-label="Washed Grey"></button>
+            </div>
+
+            <p class="pack-card__stock">Only 3 left.</p>
+            <button class="btn btn--cart" data-add-to-cart data-magnetic>ADD TO CART</button>
+            <button class="pack-card__size-guide" data-size-guide>Size Guide →</button>
+          </div>
+        </article>
+
+        <!-- THE PORTRAIT -->
+        <article class="pack-card" data-pack-reveal data-name="THE PORTRAIT" data-price="199">
+          <span class="pack-card__topline" aria-hidden="true"></span>
+          <span class="pack-card__badge pack-card__badge--discount">-33%</span>
+          <div class="pack-card__media" data-cursor="view">
+            <img class="pack-card__img" src="assets/prod-portrait.jpg" alt="THE PORTRAIT — white oversized tee, blue halftone portrait print" loading="lazy">
+          </div>
+          <div class="pack-card__body">
+            <h3 class="pack-card__name">THE PORTRAIT</h3>
+            <p class="pack-card__desc">Oversized · 240 gsm combed cotton</p>
+            <p class="pack-card__price"><span class="pack-card__price-now">199 MAD</span> <s class="pack-card__price-old">299 MAD</s></p>
+
+            <div class="pack-card__sizes" role="group" aria-label="Select size">
+              <button class="size-chip" data-size="S">S</button>
+              <button class="size-chip is-selected" data-size="M">M</button>
+              <button class="size-chip" data-size="L">L</button>
+              <button class="size-chip" data-size="XL">XL</button>
+            </div>
+            <div class="pack-card__colors" role="group" aria-label="Select color">
+              <button class="swatch" data-color="Black" style="--swatch:#111" aria-label="Black"></button>
+              <button class="swatch is-selected" data-color="Off-White" style="--swatch:#F5F3EE" aria-label="Off-White"></button>
+              <button class="swatch" data-color="Washed Grey" style="--swatch:#8A8A8A" aria-label="Washed Grey"></button>
+            </div>
+
+            <p class="pack-card__stock">Only 10 left.</p>
+            <button class="btn btn--cart" data-add-to-cart data-magnetic>ADD TO CART</button>
+            <button class="pack-card__size-guide" data-size-guide>Size Guide →</button>
+          </div>
+        </article>
+
+        <!-- TOO COLD -->
+        <article class="pack-card" data-pack-reveal data-name="TOO COLD" data-price="199">
+          <span class="pack-card__topline" aria-hidden="true"></span>
+          <span class="pack-card__badge pack-card__badge--discount">-33%</span>
+          <div class="pack-card__media" data-cursor="view">
+            <img class="pack-card__img" src="assets/prod-toocold.jpg" alt="TOO COLD — white oversized tee, bold statement front print" loading="lazy">
+          </div>
+          <div class="pack-card__body">
+            <h3 class="pack-card__name">TOO COLD</h3>
+            <p class="pack-card__desc">Oversized · 240 gsm combed cotton</p>
+            <p class="pack-card__price"><span class="pack-card__price-now">199 MAD</span> <s class="pack-card__price-old">299 MAD</s></p>
+
+            <div class="pack-card__sizes" role="group" aria-label="Select size">
+              <button class="size-chip" data-size="S">S</button>
+              <button class="size-chip is-selected" data-size="M">M</button>
+              <button class="size-chip" data-size="L">L</button>
+              <button class="size-chip" data-size="XL">XL</button>
+            </div>
+            <div class="pack-card__colors" role="group" aria-label="Select color">
+              <button class="swatch" data-color="Black" style="--swatch:#111" aria-label="Black"></button>
+              <button class="swatch is-selected" data-color="Off-White" style="--swatch:#F5F3EE" aria-label="Off-White"></button>
+              <button class="swatch" data-color="Washed Grey" style="--swatch:#8A8A8A" aria-label="Washed Grey"></button>
+            </div>
+
+            <p class="pack-card__stock">Only 6 left.</p>
+            <button class="btn btn--cart" data-add-to-cart data-magnetic>ADD TO CART</button>
+            <button class="pack-card__size-guide" data-size-guide>Size Guide →</button>
+          </div>
+        </article>
+
+        <!-- MAKE MONEY -->
+        <article class="pack-card" data-pack-reveal data-name="MAKE MONEY" data-price="199">
+          <span class="pack-card__topline" aria-hidden="true"></span>
+          <span class="pack-card__badge pack-card__badge--discount">-33%</span>
+          <div class="pack-card__media" data-cursor="view">
+            <img class="pack-card__img" src="assets/prod-makemoney.jpg" alt="MAKE MONEY — white oversized tee, red eyes front, painted list back print" loading="lazy">
+          </div>
+          <div class="pack-card__body">
+            <h3 class="pack-card__name">MAKE MONEY</h3>
+            <p class="pack-card__desc">Oversized · 240 gsm combed cotton</p>
+            <p class="pack-card__price"><span class="pack-card__price-now">199 MAD</span> <s class="pack-card__price-old">299 MAD</s></p>
+
+            <div class="pack-card__sizes" role="group" aria-label="Select size">
+              <button class="size-chip" data-size="S">S</button>
+              <button class="size-chip is-selected" data-size="M">M</button>
+              <button class="size-chip" data-size="L">L</button>
+              <button class="size-chip" data-size="XL">XL</button>
+            </div>
+            <div class="pack-card__colors" role="group" aria-label="Select color">
+              <button class="swatch" data-color="Black" style="--swatch:#111" aria-label="Black"></button>
+              <button class="swatch is-selected" data-color="Off-White" style="--swatch:#F5F3EE" aria-label="Off-White"></button>
+              <button class="swatch" data-color="Washed Grey" style="--swatch:#8A8A8A" aria-label="Washed Grey"></button>
+            </div>
+
+            <p class="pack-card__stock">Only 9 left.</p>
+            <button class="btn btn--cart" data-add-to-cart data-magnetic>ADD TO CART</button>
+            <button class="pack-card__size-guide" data-size-guide>Size Guide →</button>
+          </div>
+        </article>
+
+        <!-- RED HANDS -->
+        <article class="pack-card" data-pack-reveal data-name="RED HANDS" data-price="199">
+          <span class="pack-card__topline" aria-hidden="true"></span>
+          <span class="pack-card__badge pack-card__badge--discount">-33%</span>
+          <div class="pack-card__media" data-cursor="view">
+            <img class="pack-card__img" src="assets/prod-redhands.jpg" alt="RED HANDS — white oversized tee, red lips front, red hands back print" loading="lazy">
+          </div>
+          <div class="pack-card__body">
+            <h3 class="pack-card__name">RED HANDS</h3>
+            <p class="pack-card__desc">Oversized · 240 gsm combed cotton</p>
+            <p class="pack-card__price"><span class="pack-card__price-now">199 MAD</span> <s class="pack-card__price-old">299 MAD</s></p>
+
+            <div class="pack-card__sizes" role="group" aria-label="Select size">
+              <button class="size-chip" data-size="S">S</button>
+              <button class="size-chip is-selected" data-size="M">M</button>
+              <button class="size-chip" data-size="L">L</button>
+              <button class="size-chip" data-size="XL">XL</button>
+            </div>
+            <div class="pack-card__colors" role="group" aria-label="Select color">
+              <button class="swatch" data-color="Black" style="--swatch:#111" aria-label="Black"></button>
+              <button class="swatch is-selected" data-color="Off-White" style="--swatch:#F5F3EE" aria-label="Off-White"></button>
+              <button class="swatch" data-color="Washed Grey" style="--swatch:#8A8A8A" aria-label="Washed Grey"></button>
+            </div>
+
+            <p class="pack-card__stock">Only 5 left.</p>
+            <button class="btn btn--cart" data-add-to-cart data-magnetic>ADD TO CART</button>
+            <button class="pack-card__size-guide" data-size-guide>Size Guide →</button>
+          </div>
+        </article>
+
+        <!-- BREATHE -->
+        <article class="pack-card" data-pack-reveal data-name="BREATHE" data-price="199">
+          <span class="pack-card__topline" aria-hidden="true"></span>
+          <span class="pack-card__badge pack-card__badge--discount">-33%</span>
+          <div class="pack-card__media" data-cursor="view">
+            <img class="pack-card__img" src="assets/prod-breathe.jpg" alt="BREATHE — black oversized tee, purple hands front print" loading="lazy">
+          </div>
+          <div class="pack-card__body">
+            <h3 class="pack-card__name">BREATHE</h3>
+            <p class="pack-card__desc">Oversized · 240 gsm combed cotton</p>
+            <p class="pack-card__price"><span class="pack-card__price-now">199 MAD</span> <s class="pack-card__price-old">299 MAD</s></p>
+
+            <div class="pack-card__sizes" role="group" aria-label="Select size">
+              <button class="size-chip" data-size="S">S</button>
+              <button class="size-chip is-selected" data-size="M">M</button>
+              <button class="size-chip" data-size="L">L</button>
+              <button class="size-chip" data-size="XL">XL</button>
+            </div>
+            <div class="pack-card__colors" role="group" aria-label="Select color">
+              <button class="swatch is-selected" data-color="Black" style="--swatch:#111" aria-label="Black"></button>
+              <button class="swatch" data-color="Off-White" style="--swatch:#F5F3EE" aria-label="Off-White"></button>
+              <button class="swatch" data-color="Washed Grey" style="--swatch:#8A8A8A" aria-label="Washed Grey"></button>
+            </div>
+
+            <p class="pack-card__stock">Only 8 left.</p>
+            <button class="btn btn--cart" data-add-to-cart data-magnetic>ADD TO CART</button>
+            <button class="pack-card__size-guide" data-size-guide>Size Guide →</button>
+          </div>
+        </article>
+
+        <!-- THUG -->
+        <article class="pack-card" data-pack-reveal data-name="THUG" data-price="199">
+          <span class="pack-card__topline" aria-hidden="true"></span>
+          <span class="pack-card__badge pack-card__badge--discount">-33%</span>
+          <div class="pack-card__media" data-cursor="view">
+            <img class="pack-card__img" src="assets/prod-thug.jpg" alt="THUG — black oversized tee, collage graphic front print" loading="lazy">
+          </div>
+          <div class="pack-card__body">
+            <h3 class="pack-card__name">THUG</h3>
+            <p class="pack-card__desc">Oversized · 240 gsm combed cotton</p>
+            <p class="pack-card__price"><span class="pack-card__price-now">199 MAD</span> <s class="pack-card__price-old">299 MAD</s></p>
+
+            <div class="pack-card__sizes" role="group" aria-label="Select size">
+              <button class="size-chip" data-size="S">S</button>
+              <button class="size-chip is-selected" data-size="M">M</button>
+              <button class="size-chip" data-size="L">L</button>
+              <button class="size-chip" data-size="XL">XL</button>
+            </div>
+            <div class="pack-card__colors" role="group" aria-label="Select color">
+              <button class="swatch is-selected" data-color="Black" style="--swatch:#111" aria-label="Black"></button>
+              <button class="swatch" data-color="Off-White" style="--swatch:#F5F3EE" aria-label="Off-White"></button>
+              <button class="swatch" data-color="Washed Grey" style="--swatch:#8A8A8A" aria-label="Washed Grey"></button>
+            </div>
+
+            <p class="pack-card__stock">Only 6 left.</p>
+            <button class="btn btn--cart" data-add-to-cart data-magnetic>ADD TO CART</button>
+            <button class="pack-card__size-guide" data-size-guide>Size Guide →</button>
+          </div>
+        </article>
+
+        <!-- DESIRE -->
+        <article class="pack-card" data-pack-reveal data-name="DESIRE" data-price="199">
+          <span class="pack-card__topline" aria-hidden="true"></span>
+          <span class="pack-card__badge pack-card__badge--discount">-33%</span>
+          <div class="pack-card__media" data-cursor="view">
+            <img class="pack-card__img" src="assets/prod-desire.jpg" alt="DESIRE — black oversized tee, pink type and ghost figures front print" loading="lazy">
+          </div>
+          <div class="pack-card__body">
+            <h3 class="pack-card__name">DESIRE</h3>
+            <p class="pack-card__desc">Oversized · 240 gsm combed cotton</p>
+            <p class="pack-card__price"><span class="pack-card__price-now">199 MAD</span> <s class="pack-card__price-old">299 MAD</s></p>
+
+            <div class="pack-card__sizes" role="group" aria-label="Select size">
+              <button class="size-chip" data-size="S">S</button>
+              <button class="size-chip is-selected" data-size="M">M</button>
+              <button class="size-chip" data-size="L">L</button>
+              <button class="size-chip" data-size="XL">XL</button>
+            </div>
+            <div class="pack-card__colors" role="group" aria-label="Select color">
+              <button class="swatch is-selected" data-color="Black" style="--swatch:#111" aria-label="Black"></button>
+              <button class="swatch" data-color="Off-White" style="--swatch:#F5F3EE" aria-label="Off-White"></button>
+              <button class="swatch" data-color="Washed Grey" style="--swatch:#8A8A8A" aria-label="Washed Grey"></button>
+            </div>
+
+            <p class="pack-card__stock">Only 4 left.</p>
+            <button class="btn btn--cart" data-add-to-cart data-magnetic>ADD TO CART</button>
+            <button class="pack-card__size-guide" data-size-guide>Size Guide →</button>
+          </div>
+        </article>
+
+        <!-- DREAM CHASING -->
+        <article class="pack-card" data-pack-reveal data-name="DREAM CHASING" data-price="199">
+          <span class="pack-card__topline" aria-hidden="true"></span>
+          <span class="pack-card__badge pack-card__badge--discount">-33%</span>
+          <div class="pack-card__media" data-cursor="view">
+            <img class="pack-card__img" src="assets/prod-dream.jpg" alt="DREAM CHASING — black oversized tee, halftone silhouette front print" loading="lazy">
+          </div>
+          <div class="pack-card__body">
+            <h3 class="pack-card__name">DREAM CHASING</h3>
+            <p class="pack-card__desc">Oversized · 240 gsm combed cotton</p>
+            <p class="pack-card__price"><span class="pack-card__price-now">199 MAD</span> <s class="pack-card__price-old">299 MAD</s></p>
+
+            <div class="pack-card__sizes" role="group" aria-label="Select size">
+              <button class="size-chip" data-size="S">S</button>
+              <button class="size-chip is-selected" data-size="M">M</button>
+              <button class="size-chip" data-size="L">L</button>
+              <button class="size-chip" data-size="XL">XL</button>
+            </div>
+            <div class="pack-card__colors" role="group" aria-label="Select color">
+              <button class="swatch is-selected" data-color="Black" style="--swatch:#111" aria-label="Black"></button>
+              <button class="swatch" data-color="Off-White" style="--swatch:#F5F3EE" aria-label="Off-White"></button>
+              <button class="swatch" data-color="Washed Grey" style="--swatch:#8A8A8A" aria-label="Washed Grey"></button>
+            </div>
+
+            <p class="pack-card__stock">Only 7 left.</p>
+            <button class="btn btn--cart" data-add-to-cart data-magnetic>ADD TO CART</button>
+            <button class="pack-card__size-guide" data-size-guide>Size Guide →</button>
+          </div>
+        </article>
+
+        <!-- DARK -->
+        <article class="pack-card" data-pack-reveal data-name="DARK" data-price="199">
+          <span class="pack-card__topline" aria-hidden="true"></span>
+          <span class="pack-card__badge pack-card__badge--discount">-33%</span>
+          <div class="pack-card__media" data-cursor="view">
+            <img class="pack-card__img" src="assets/prod-dark.jpg" alt="DARK — black oversized tee, red stars and portrait front print" loading="lazy">
+          </div>
+          <div class="pack-card__body">
+            <h3 class="pack-card__name">DARK</h3>
+            <p class="pack-card__desc">Oversized · 240 gsm combed cotton</p>
+            <p class="pack-card__price"><span class="pack-card__price-now">199 MAD</span> <s class="pack-card__price-old">299 MAD</s></p>
+
+            <div class="pack-card__sizes" role="group" aria-label="Select size">
+              <button class="size-chip" data-size="S">S</button>
+              <button class="size-chip is-selected" data-size="M">M</button>
+              <button class="size-chip" data-size="L">L</button>
+              <button class="size-chip" data-size="XL">XL</button>
+            </div>
+            <div class="pack-card__colors" role="group" aria-label="Select color">
+              <button class="swatch is-selected" data-color="Black" style="--swatch:#111" aria-label="Black"></button>
+              <button class="swatch" data-color="Off-White" style="--swatch:#F5F3EE" aria-label="Off-White"></button>
+              <button class="swatch" data-color="Washed Grey" style="--swatch:#8A8A8A" aria-label="Washed Grey"></button>
+            </div>
+
+            <p class="pack-card__stock">Only 5 left.</p>
+            <button class="btn btn--cart" data-add-to-cart data-magnetic>ADD TO CART</button>
+            <button class="pack-card__size-guide" data-size-guide>Size Guide →</button>
+          </div>
+        </article>
+
+        <!-- PEACE -->
+        <article class="pack-card" data-pack-reveal data-name="PEACE" data-price="249">
+          <span class="pack-card__topline" aria-hidden="true"></span>
+          <span class="pack-card__badge pack-card__badge--discount">LOW STOCK</span>
+          <div class="pack-card__media" data-cursor="view">
+            <img class="pack-card__img" src="assets/prod-peace.jpg" alt="PEACE — black oversized tee, red arched type and portrait front print" loading="lazy">
+          </div>
+          <div class="pack-card__body">
+            <h3 class="pack-card__name">PEACE</h3>
+            <p class="pack-card__desc">Oversized · 240 gsm combed cotton</p>
+            <p class="pack-card__price"><span class="pack-card__price-now">249 MAD</span> <s class="pack-card__price-old">349 MAD</s></p>
+
+            <div class="pack-card__sizes" role="group" aria-label="Select size">
+              <button class="size-chip" data-size="S">S</button>
+              <button class="size-chip is-selected" data-size="M">M</button>
+              <button class="size-chip" data-size="L">L</button>
+              <button class="size-chip" data-size="XL">XL</button>
+            </div>
+            <div class="pack-card__colors" role="group" aria-label="Select color">
+              <button class="swatch is-selected" data-color="Black" style="--swatch:#111" aria-label="Black"></button>
+              <button class="swatch" data-color="Off-White" style="--swatch:#F5F3EE" aria-label="Off-White"></button>
+              <button class="swatch" data-color="Washed Grey" style="--swatch:#8A8A8A" aria-label="Washed Grey"></button>
+            </div>
+
+            <p class="pack-card__stock">Only 2 left.</p>
+            <button class="btn btn--cart" data-add-to-cart data-magnetic>ADD TO CART</button>
+            <button class="pack-card__size-guide" data-size-guide>Size Guide →</button>
+          </div>
+        </article>
+
+        <!-- LONELY -->
+        <article class="pack-card" data-pack-reveal data-name="LONELY" data-price="199">
+          <span class="pack-card__topline" aria-hidden="true"></span>
+          <span class="pack-card__badge pack-card__badge--discount">-33%</span>
+          <div class="pack-card__media" data-cursor="view">
+            <img class="pack-card__img" src="assets/prod-lonely.jpg" alt="LONELY — black oversized tee, purple face and cross front print" loading="lazy">
+          </div>
+          <div class="pack-card__body">
+            <h3 class="pack-card__name">LONELY</h3>
+            <p class="pack-card__desc">Oversized · 240 gsm combed cotton</p>
+            <p class="pack-card__price"><span class="pack-card__price-now">199 MAD</span> <s class="pack-card__price-old">299 MAD</s></p>
+
+            <div class="pack-card__sizes" role="group" aria-label="Select size">
+              <button class="size-chip" data-size="S">S</button>
+              <button class="size-chip is-selected" data-size="M">M</button>
+              <button class="size-chip" data-size="L">L</button>
+              <button class="size-chip" data-size="XL">XL</button>
+            </div>
+            <div class="pack-card__colors" role="group" aria-label="Select color">
+              <button class="swatch is-selected" data-color="Black" style="--swatch:#111" aria-label="Black"></button>
+              <button class="swatch" data-color="Off-White" style="--swatch:#F5F3EE" aria-label="Off-White"></button>
+              <button class="swatch" data-color="Washed Grey" style="--swatch:#8A8A8A" aria-label="Washed Grey"></button>
+            </div>
+
+            <p class="pack-card__stock">Only 9 left.</p>
+            <button class="btn btn--cart" data-add-to-cart data-magnetic>ADD TO CART</button>
+            <button class="pack-card__size-guide" data-size-guide>Size Guide →</button>
+          </div>
+        </article>
+
+        <!-- SPIDER -->
+        <article class="pack-card" data-pack-reveal data-name="SPIDER" data-price="199">
+          <span class="pack-card__topline" aria-hidden="true"></span>
+          <span class="pack-card__badge pack-card__badge--discount">-33%</span>
+          <div class="pack-card__media" data-cursor="view">
+            <img class="pack-card__img" src="assets/prod-spider.jpg" alt="SPIDER — black oversized tee, blurred figure and spider front print" loading="lazy">
+          </div>
+          <div class="pack-card__body">
+            <h3 class="pack-card__name">SPIDER</h3>
+            <p class="pack-card__desc">Oversized · 240 gsm combed cotton</p>
+            <p class="pack-card__price"><span class="pack-card__price-now">199 MAD</span> <s class="pack-card__price-old">299 MAD</s></p>
+
+            <div class="pack-card__sizes" role="group" aria-label="Select size">
+              <button class="size-chip" data-size="S">S</button>
+              <button class="size-chip is-selected" data-size="M">M</button>
+              <button class="size-chip" data-size="L">L</button>
+              <button class="size-chip" data-size="XL">XL</button>
+            </div>
+            <div class="pack-card__colors" role="group" aria-label="Select color">
+              <button class="swatch is-selected" data-color="Black" style="--swatch:#111" aria-label="Black"></button>
+              <button class="swatch" data-color="Off-White" style="--swatch:#F5F3EE" aria-label="Off-White"></button>
+              <button class="swatch" data-color="Washed Grey" style="--swatch:#8A8A8A" aria-label="Washed Grey"></button>
+            </div>
+
+            <p class="pack-card__stock">Only 6 left.</p>
+            <button class="btn btn--cart" data-add-to-cart data-magnetic>ADD TO CART</button>
+            <button class="pack-card__size-guide" data-size-guide>Size Guide →</button>
+          </div>
+        </article>
+
+        <!-- HELLSTAR -->
+        <article class="pack-card" data-pack-reveal data-name="HELLSTAR" data-price="249">
+          <span class="pack-card__topline" aria-hidden="true"></span>
+          <span class="pack-card__badge pack-card__badge--discount">-29%</span>
+          <div class="pack-card__media" data-cursor="view">
+            <img class="pack-card__img" src="assets/prod-hellstar.jpg" alt="HELLSTAR — washed black oversized tee, red flame graphic front print" loading="lazy">
+          </div>
+          <div class="pack-card__body">
+            <h3 class="pack-card__name">HELLSTAR</h3>
+            <p class="pack-card__desc">Oversized · 240 gsm combed cotton</p>
+            <p class="pack-card__price"><span class="pack-card__price-now">249 MAD</span> <s class="pack-card__price-old">349 MAD</s></p>
+
+            <div class="pack-card__sizes" role="group" aria-label="Select size">
+              <button class="size-chip" data-size="S">S</button>
+              <button class="size-chip is-selected" data-size="M">M</button>
+              <button class="size-chip" data-size="L">L</button>
+              <button class="size-chip" data-size="XL">XL</button>
+            </div>
+            <div class="pack-card__colors" role="group" aria-label="Select color">
+              <button class="swatch is-selected" data-color="Black" style="--swatch:#111" aria-label="Black"></button>
+              <button class="swatch" data-color="Off-White" style="--swatch:#F5F3EE" aria-label="Off-White"></button>
+              <button class="swatch" data-color="Washed Grey" style="--swatch:#8A8A8A" aria-label="Washed Grey"></button>
+            </div>
+
+            <p class="pack-card__stock">Only 3 left.</p>
+            <button class="btn btn--cart" data-add-to-cart data-magnetic>ADD TO CART</button>
+            <button class="pack-card__size-guide" data-size-guide>Size Guide →</button>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- Interstitial marquee (dark, left) -->
+    <div class="strip" data-bg="dark" aria-hidden="true">
+      <div class="strip__track marquee-track" data-marquee data-direction="-1" data-base-speed="1.2" data-skew>
+        <span class="strip__item strip__item--light">IN THE STREETS ✦ DROP 01 ✦ 300 PIECES ✦ NOVYR ✦&ensp;</span>
+      </div>
+    </div>
+
+    <!-- ============================================================
+         SECTION 6 — LOOKBOOK
+    ============================================================ -->
+    <section class="lookbook" id="lookbook" data-bg="dark" aria-label="Lookbook">
+      <h2 class="lookbook__title outlined" data-chars>IN THE STREETS</h2>
+
+      <div class="lookbook__carousel-wrap">
+        <div class="lookbook__carousel" id="lookCarousel" data-cursor="drag" tabindex="0" aria-label="Lookbook image carousel, drag or use arrow keys">
+          <figure class="lookbook__slide"><span class="lookbook__tag">DROP 01</span><img src="assets/look-1.jpg" alt="Lookbook — black tee, red halo graphic print" loading="lazy"></figure>
+          <figure class="lookbook__slide"><span class="lookbook__tag">DROP 01</span><img src="assets/look-2.jpg" alt="Lookbook — black tee, red pixel type print" loading="lazy"></figure>
+          <figure class="lookbook__slide"><span class="lookbook__tag">DROP 01</span><img src="assets/look-3.jpg" alt="Lookbook — white tee, bold statement print" loading="lazy"></figure>
+          <figure class="lookbook__slide"><span class="lookbook__tag">DROP 01</span><img src="assets/look-4.jpg" alt="Lookbook — white tee, brush script print" loading="lazy"></figure>
+          <figure class="lookbook__slide"><span class="lookbook__tag">DROP 01</span><img src="assets/look-5.jpg" alt="Lookbook — white tee, blue portrait print" loading="lazy"></figure>
+          <figure class="lookbook__slide"><span class="lookbook__tag">DROP 01</span><img src="assets/look-6.jpg" alt="Lookbook — black tee, collage graphic print" loading="lazy"></figure>
+        </div>
+        <div class="lookbook__nav">
+          <button class="lookbook__arrow" id="lookPrev" aria-label="Previous images">←</button>
+          <button class="lookbook__arrow" id="lookNext" aria-label="Next images">→</button>
+        </div>
+      </div>
+
+      <div class="lookbook__stats" id="lookStats">
+        <div class="lookbook__stat"><span data-countup data-target="3500" data-prefix="+" data-suffix=" ORDERS DELIVERED">+0 ORDERS DELIVERED</span></div>
+        <div class="lookbook__stat"><span data-countup data-target="4.9" data-decimals="1" data-suffix="/5 (487 REVIEWS)">0/5 (487 REVIEWS)</span></div>
+        <div class="lookbook__stat"><span data-countup data-target="300" data-suffix=" PIECES PER DROP, NEVER RESTOCKED">0 PIECES PER DROP, NEVER RESTOCKED</span></div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         SECTION 7 — REVIEWS
+    ============================================================ -->
+    <section class="reviews" id="reviews" data-bg="light" aria-label="Customer reviews">
+      <h2 class="reviews__title" data-chars>THE CREW HAS SPOKEN</h2>
+
+      <div class="reviews__slider" id="reviewsSlider">
+        <span class="reviews__quotemark" aria-hidden="true">&ldquo;</span>
+        <div class="reviews__viewport" id="reviewsViewport">
+          <!-- slides injected/managed by JS from this markup -->
+          <blockquote class="reviews__slide is-active" data-review>
+            <p class="reviews__text">The cotton quality is insane, nothing like what you usually find here. Delivered in 2 days.</p>
+            <footer class="reviews__meta">
+              <span class="reviews__avatar" aria-hidden="true">YM</span>
+              <cite class="reviews__author">Yassine M., Casablanca</cite>
+            </footer>
+          </blockquote>
+          <blockquote class="reviews__slide" data-review>
+            <p class="reviews__text">Perfect oversized fit. Took my usual size as advised. Zero complaints.</p>
+            <footer class="reviews__meta">
+              <span class="reviews__avatar" aria-hidden="true">SR</span>
+              <cite class="reviews__author">Salma R., Rabat</cite>
+            </footer>
+          </blockquote>
+          <blockquote class="reviews__slide" data-review>
+            <p class="reviews__text">The print hasn't moved after 10 washes. Cash on delivery made me feel safe ordering.</p>
+            <footer class="reviews__meta">
+              <span class="reviews__avatar" aria-hidden="true">AK</span>
+              <cite class="reviews__author">Amine K., Marrakech</cite>
+            </footer>
+          </blockquote>
+          <blockquote class="reviews__slide" data-review>
+            <p class="reviews__text">The Duo Pack is more than worth it. The black is deep, not washed out.</p>
+            <footer class="reviews__meta">
+              <span class="reviews__avatar" aria-hidden="true">DL</span>
+              <cite class="reviews__author">Douae L., Fès</cite>
+            </footer>
+          </blockquote>
+        </div>
+        <div class="reviews__controls">
+          <button class="reviews__arrow" id="revPrev" aria-label="Previous review">←</button>
+          <button class="reviews__arrow" id="revNext" aria-label="Next review">→</button>
+        </div>
+        <div class="reviews__progress"><span class="reviews__progress-fill" id="revProgress"></span></div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         SECTION 8 — WHY NOVYR
+    ============================================================ -->
+    <section class="why" id="why" data-bg="dark" aria-label="Why NOVYR">
+      <h2 class="why__title outlined" data-chars>WHY NOVYR</h2>
+      <div class="why__grid">
+        <div class="why__item" data-reveal>
+          <span class="why__num" aria-hidden="true">01</span>
+          <h3 class="why__item-title">CASH ON DELIVERY</h3>
+          <p class="why__item-body">Pay only when you receive your order. No upfront risk.</p>
+        </div>
+        <div class="why__item" data-reveal>
+          <span class="why__num" aria-hidden="true">02</span>
+          <h3 class="why__item-title">24–48H DELIVERY</h3>
+          <p class="why__item-body">Free delivery across Morocco. Tracked and fast.</p>
+        </div>
+        <div class="why__item" data-reveal>
+          <span class="why__num" aria-hidden="true">03</span>
+          <h3 class="why__item-title">FREE SIZE EXCHANGE</h3>
+          <p class="why__item-body">Wrong size? Exchange within 7 days, no questions asked.</p>
+        </div>
+        <div class="why__item" data-reveal>
+          <span class="why__num" aria-hidden="true">04</span>
+          <h3 class="why__item-title">WHATSAPP SUPPORT</h3>
+          <p class="why__item-body">Real humans, real answers. 7 days a week.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         SECTION 9 — FAQ
+    ============================================================ -->
+    <section class="faq" id="faq" data-bg="light" aria-label="Frequently asked questions">
+      <h2 class="faq__title" data-chars>FAQ</h2>
+      <div class="faq__list">
+        <div class="faq__item">
+          <button class="faq__q" aria-expanded="false">
+            <span>How do I choose my size?</span><span class="faq__icon" aria-hidden="true">+</span>
+          </button>
+          <div class="faq__a"><p>Our tees run oversized — take your usual size. Check the size guide on each product for exact measurements in cm.</p></div>
+        </div>
+        <div class="faq__item">
+          <button class="faq__q" aria-expanded="false">
+            <span>How does payment work?</span><span class="faq__icon" aria-hidden="true">+</span>
+          </button>
+          <div class="faq__a"><p>Cash on delivery anywhere in Morocco. You pay the courier in cash, only after checking your order.</p></div>
+        </div>
+        <div class="faq__item">
+          <button class="faq__q" aria-expanded="false">
+            <span>What are the delivery times?</span><span class="faq__icon" aria-hidden="true">+</span>
+          </button>
+          <div class="faq__a"><p>24–48h for Casablanca, Rabat, Marrakech, Fès and Tanger. 2–4 days for other cities. Always free.</p></div>
+        </div>
+        <div class="faq__item">
+          <button class="faq__q" aria-expanded="false">
+            <span>How do I care for my tee?</span><span class="faq__icon" aria-hidden="true">+</span>
+          </button>
+          <div class="faq__a"><p>Wash at 30°C inside out, no tumble dryer, iron inside out. The print is guaranteed against cracking.</p></div>
+        </div>
+        <div class="faq__item">
+          <button class="faq__q" aria-expanded="false">
+            <span>Can I exchange my size?</span><span class="faq__icon" aria-hidden="true">+</span>
+          </button>
+          <div class="faq__a"><p>Yes — free size exchange within 7 days if the tee is unworn and unwashed.</p></div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============================================================
+       SECTION 11 — FOOTER
+  ============================================================ -->
+  <footer class="footer" data-bg="dark">
+    <span class="footer__watermark" id="footerWatermark" aria-hidden="true">NOVYR</span>
+    <div class="footer__cols">
+      <div class="footer__col">
+        <span class="footer__brand">NOVYR</span>
+        <p class="footer__tagline">Wear the streets.</p>
+        <div class="footer__social">
+          <a href="[INSTAGRAM URL]" aria-label="NOVYR on Instagram" target="_blank" rel="noopener">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="3" y="3" width="18" height="18"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.2" cy="6.8" r="0.8" fill="currentColor"/></svg>
+          </a>
+          <a href="[TIKTOK URL]" aria-label="NOVYR on TikTok" target="_blank" rel="noopener">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M14 4v10.5a3.75 3.75 0 1 1-3.75-3.75"/><path d="M14 4c.4 2.6 2.2 4.4 5 4.7"/></svg>
+          </a>
+        </div>
+      </div>
+      <div class="footer__col">
+        <span class="footer__heading">NAVIGATION</span>
+        <nav class="footer__nav" aria-label="Footer navigation">
+          <a href="#hero" data-wipe>Home</a>
+          <a href="#packs" data-wipe>Products</a>
+          <a href="#lookbook" data-wipe>Lookbook</a>
+          <a href="#reviews" data-wipe>Reviews</a>
+          <a href="#faq" data-wipe>FAQ</a>
+        </nav>
+      </div>
+      <div class="footer__col">
+        <span class="footer__heading">LEGAL</span>
+        <nav class="footer__nav" aria-label="Legal links">
+          <button data-legal="privacy">Privacy Policy</button>
+          <button data-legal="refund">Refund Policy</button>
+          <button data-legal="terms">Terms of Service</button>
+          <button data-legal="shipping">Shipping Policy</button>
+        </nav>
+      </div>
+      <div class="footer__col" id="newsletter">
+        <span class="footer__join">JOIN THE CREW</span>
+        <p class="footer__join-sub">Be first on upcoming drops.</p>
+        <form class="footer__form" id="newsletterForm" novalidate>
+          <label class="sr-only" for="newsletterEmail">Email address</label>
+          <input type="email" id="newsletterEmail" placeholder="EMAIL ADDRESS" required autocomplete="email">
+          <button type="submit" class="footer__subscribe" aria-label="Subscribe to newsletter">SUBSCRIBE →</button>
+        </form>
+        <p class="footer__success" id="newsletterSuccess" aria-live="polite">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#D0FF00" stroke-width="2.5" aria-hidden="true"><path d="M4 12.5l5.5 5.5L20 6.5"/></svg>
+          You're in.
+        </p>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <span>© 2026 NOVYR — ALL RIGHTS RESERVED</span>
+      <span class="footer__payments">CASH ON DELIVERY&ensp;·&ensp;VISA&ensp;·&ensp;MASTERCARD</span>
+    </div>
+  </footer>
+
+  <!-- ============================================================
+       SECTION 10 — CART DRAWER + CHECKOUT
+  ============================================================ -->
+  <div class="cart-overlay" id="cartOverlay" aria-hidden="true"></div>
+  <aside class="cart" id="cart" role="dialog" aria-modal="true" aria-label="Shopping cart" aria-hidden="true">
+    <div class="cart__header">
+      <button class="cart__close" id="cartClose" aria-label="Close cart">←</button>
+      <span class="cart__title">CART</span>
+    </div>
+
+    <!-- Cart items view -->
+    <div class="cart__view cart__view--items is-active" id="cartItemsView">
+      <div class="cart__items" id="cartItems">
+        <p class="cart__empty" id="cartEmpty">Your cart is empty.<br>The drop won't wait.</p>
+      </div>
+      <div class="cart__footer">
+        <p class="cart__total">TOTAL — <span id="cartTotal">0</span> MAD</p>
+        <button class="btn btn--primary cart__proceed" id="cartProceed">PROCEED</button>
+        <a class="btn btn--ghost cart__whatsapp" id="cartWhatsApp" href="https://wa.me/[WHATSAPP NUMBER]" target="_blank" rel="noopener">ORDER VIA WHATSAPP →</a>
+      </div>
+    </div>
+
+    <!-- Checkout view -->
+    <div class="cart__view cart__view--checkout" id="cartCheckoutView">
+      <form class="checkout" id="checkoutForm" novalidate>
+        <div class="checkout__field">
+          <label for="coName">FULL NAME</label>
+          <input type="text" id="coName" name="fullName" required autocomplete="name">
+          <span class="checkout__error" data-error-for="coName">Please enter your full name.</span>
+        </div>
+        <div class="checkout__field">
+          <label for="coPhone">PHONE</label>
+          <input type="tel" id="coPhone" name="phone" required placeholder="06XXXXXXXX" autocomplete="tel" inputmode="tel">
+          <span class="checkout__error" data-error-for="coPhone">Enter a valid Moroccan number (06/07 + 8 digits).</span>
+        </div>
+        <div class="checkout__field">
+          <label for="coCity">CITY</label>
+          <select id="coCity" name="city" required>
+            <option value="" disabled selected>SELECT CITY</option>
+            <option>Casablanca</option>
+            <option>Rabat</option>
+            <option>Marrakech</option>
+            <option>Fès</option>
+            <option>Tanger</option>
+            <option>Agadir</option>
+            <option>Meknès</option>
+            <option>Oujda</option>
+            <option>Other</option>
+          </select>
+          <span class="checkout__error" data-error-for="coCity">Please select your city.</span>
+        </div>
+        <div class="checkout__field">
+          <label for="coAddress">ADDRESS</label>
+          <input type="text" id="coAddress" name="address" required autocomplete="street-address">
+          <span class="checkout__error" data-error-for="coAddress">Please enter your delivery address.</span>
+        </div>
+        <button type="submit" class="btn btn--primary checkout__confirm">CONFIRM ORDER — CASH ON DELIVERY</button>
+        <a class="btn btn--ghost checkout__whatsapp" id="checkoutWhatsApp" href="https://wa.me/[WHATSAPP NUMBER]" target="_blank" rel="noopener">ORDER VIA WHATSAPP →</a>
+      </form>
+    </div>
+
+    <!-- Order success overlay -->
+    <div class="cart__success" id="orderSuccess" aria-hidden="true">
+      <svg class="cart__check" width="72" height="72" viewBox="0 0 72 72" fill="none" aria-hidden="true">
+        <path id="checkPath" d="M16 38l14 14 26-30" stroke="#FFFFFF" stroke-width="4" stroke-linecap="square"/>
+      </svg>
+      <p class="cart__success-title">ORDER RECEIVED.</p>
+      <p class="cart__success-sub">We'll call you within 24h to confirm.</p>
+    </div>
+  </aside>
+
+  <!-- ============================================================
+       SIZE GUIDE MODAL
+  ============================================================ -->
+  <div class="modal-overlay" id="sizeOverlay" aria-hidden="true"></div>
+  <div class="modal modal--size" id="sizeModal" role="dialog" aria-modal="true" aria-labelledby="sizeModalTitle" aria-hidden="true">
+    <button class="modal__close" data-close-size aria-label="Close size guide">×</button>
+    <h3 class="modal__title" id="sizeModalTitle">SIZE GUIDE</h3>
+    <table class="modal__table">
+      <thead>
+        <tr><th scope="col"></th><th scope="col">S</th><th scope="col">M</th><th scope="col">L</th><th scope="col">XL</th></tr>
+      </thead>
+      <tbody>
+        <tr><th scope="row">Width (cm)</th><td>52</td><td>55</td><td>58</td><td>61</td></tr>
+        <tr><th scope="row">Length (cm)</th><td>70</td><td>72</td><td>74</td><td>76</td></tr>
+      </tbody>
+    </table>
+    <p class="modal__note">Oversized fit — take your usual size.</p>
+  </div>
+
+  <!-- ============================================================
+       LEGAL MODAL (shared, content swapped by JS)
+  ============================================================ -->
+  <div class="modal-overlay" id="legalOverlay" aria-hidden="true"></div>
+  <div class="modal modal--legal" id="legalModal" role="dialog" aria-modal="true" aria-labelledby="legalModalTitle" aria-hidden="true">
+    <button class="modal__close" data-close-legal aria-label="Close">×</button>
+    <h3 class="modal__title" id="legalModalTitle">PRIVACY POLICY</h3>
+    <div class="modal__body" id="legalModalBody"></div>
+  </div>
+
+  <!-- ============================================================
+       FLOATING ELEMENTS
+  ============================================================ -->
+  <a class="float-wa" id="floatWa" href="https://wa.me/[WHATSAPP NUMBER]" target="_blank" rel="noopener" aria-label="Order via WhatsApp">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+      <path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5.1-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.1l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.6-6.1c-.3-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1-.2.3-.6.8-.8 1-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.4-3c-.3-.4 0-.5.1-.7l.4-.5c.1-.2.1-.3 0-.5-.1-.1-.6-1.4-.8-1.9-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.2.3-.9.9-.9 2.2s.9 2.5 1.1 2.7c.1.2 1.8 2.8 4.4 3.9.6.3 1.1.4 1.5.5.6.2 1.2.2 1.6.1.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.2-.2-.5-.3z"/>
+    </svg>
+    <span class="float-wa__tooltip">ORDER VIA WHATSAPP</span>
+  </a>
+  <button class="float-top" id="floatTop" aria-label="Back to top">↑</button>
+
+  <!-- Libraries -->
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.14/dist/lenis.min.js" defer></script>
+  <script src="script.js" defer></script>
+</body>
+</html>

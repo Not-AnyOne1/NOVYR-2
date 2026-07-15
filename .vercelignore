@@ -1,0 +1,6 @@
+# Raw source mockups — kept in git, not needed by the deployed site.
+# The site only serves the optimised images in assets/.
+products/
+
+# Local dev server config
+.claude/

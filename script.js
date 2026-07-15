@@ -858,7 +858,7 @@
   const checkoutForm = $("#checkoutForm");
   const phoneOk = (v) => /^0[67]\d{8}$/.test(v.replace(/[\s-]/g, ""));
 
-  checkoutForm.addEventListener("submit", (e) => {
+  checkoutForm.addEventListener("submit", async (e) => {
     e.preventDefault();
     const fields = {
       coName: (v) => v.trim().length >= 3,
@@ -889,21 +889,40 @@
       createdAt: new Date().toISOString()
     };
 
-    // Front-end only: log + fire-and-forget POST to placeholder endpoint.
-    console.log("NOVYR ORDER:", order);
-    fetch(ORDER_ENDPOINT, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(order)
-    }).catch(() => { /* placeholder endpoint — expected to fail locally */ });
+    const btn = $(".checkout__confirm", checkoutForm);
+    const errorBox = $("#checkoutError");
+    const label = btn.textContent;
+    errorBox.classList.remove("is-visible");
+    btn.disabled = true;
+    btn.textContent = "SENDING…";
 
-    // success overlay with animated checkmark
-    $("#orderSuccess").classList.add("is-open");
-    $("#orderSuccess").setAttribute("aria-hidden", "false");
-    cart = [];
-    renderCart();
-    checkoutForm.reset();
-    setTimeout(() => { closeCart(); }, 3200);
+    try {
+      const res = await fetch(ORDER_ENDPOINT, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(order)
+      });
+      // fetch only rejects on network failure, so 4xx/5xx must be checked explicitly —
+      // otherwise a dropped order would still show the success screen.
+      if (!res.ok) throw new Error("HTTP " + res.status);
+
+      // Delivered to the shop. Only now is it safe to clear the cart and celebrate.
+      $("#orderSuccess").classList.add("is-open");
+      $("#orderSuccess").setAttribute("aria-hidden", "false");
+      cart = [];
+      renderCart();
+      checkoutForm.reset();
+      setTimeout(() => { closeCart(); }, 3200);
+    } catch (err) {
+      // Never fake success: keep the cart intact and offer the WhatsApp fallback.
+      console.error("NOVYR: order could not be sent —", err.message);
+      updateWaLinks();
+      errorBox.classList.add("is-visible");
+      errorBox.scrollIntoView({ block: "nearest" });
+    } finally {
+      btn.disabled = false;
+      btn.textContent = label;
+    }
   });
 
   /* ============================================================

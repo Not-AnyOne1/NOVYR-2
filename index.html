@@ -1335,6 +1335,10 @@
           <input type="text" id="coAddress" name="address" required autocomplete="street-address">
           <span class="checkout__error" data-error-for="coAddress">Please enter your delivery address.</span>
         </div>
+        <p class="checkout__failed" id="checkoutError" role="alert" aria-live="assertive">
+          We couldn't send your order. Nothing is lost — your cart is still here.
+          Try again, or send it straight to us on WhatsApp below.
+        </p>
         <button type="submit" class="btn btn--primary checkout__confirm">CONFIRM ORDER — CASH ON DELIVERY</button>
         <a class="btn btn--ghost checkout__whatsapp" id="checkoutWhatsApp" href="https://wa.me/212688039829" target="_blank" rel="noopener">ORDER VIA WHATSAPP →</a>
       </form>

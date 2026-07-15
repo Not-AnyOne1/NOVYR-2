@@ -1384,11 +1384,24 @@ html.no-motion .pack-card,
   color: var(--red);
 }
 .checkout__field.has-error .checkout__error { display: block; }
+/* Shown only when the order genuinely failed to reach the shop. */
+.checkout__failed {
+  display: none;
+  font-family: var(--font-ui);
+  font-size: 12px;
+  line-height: 1.6;
+  color: var(--red);
+  border: 1px solid var(--red);
+  padding: 12px 14px;
+}
+.checkout__failed.is-visible { display: block; }
+
 .checkout__confirm {
   height: 56px;
   padding: 0;
   margin-top: 8px;
 }
+.btn:disabled { opacity: 0.55; pointer-events: none; }
 .checkout__whatsapp { width: 100%; }
 
 /* Order success overlay */

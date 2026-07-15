@@ -8,7 +8,7 @@
   "use strict";
 
   /* ---------- Config ---------- */
-  const WHATSAPP_NUMBER = "[WHATSAPP NUMBER]"; // e.g. "212600000000"
+  const WHATSAPP_NUMBER = "212688039829"; // 06 88 03 98 29 in wa.me international format
   const ORDER_ENDPOINT = "/api/orders";        // placeholder POST endpoint
   const EASE_SIG = "cubic-bezier(0.16, 1, 0.3, 1)";
 
